@@ -60,14 +60,43 @@ h1 {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 0;
+  height: 0;
+  overflow: hidden;
   position: fixed;
+  text-align: center;
+  padding: 100px 0;
   z-index: 9999;
   top: 0;
   left: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .overlay:target {
+  width: auto;
+  height: auto;
   right: 0;
   bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay img {
+  max-height: 100%;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+}
+
+.overlay:target img {
+  animation: zoomFade 0.6s;
+}
+
+@keyframes zoomFade {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
