@@ -100,3 +100,30 @@ h1 {
     opacity: 1;
   }
 }
+
+.overlay .close {
+  background-color: royalblue;
+  position: absolute;
+  border-radius: 2px;
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 4px 4px 2px 4px;
+  line-height: 20px;
+  color: white;
+  text-decoration: none;
+  opacity: 0;
+}
+
+.overlay:target .close {
+  animation: close 0.5s 0.5s forwards;
+}
+
+@keyframes close {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
