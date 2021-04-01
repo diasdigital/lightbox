@@ -55,7 +55,7 @@ h1 {
 }
 
 .gallery li:hover span {
-  animation: hoverFade 0.3s forwards;
+  animation: fade 0.3s forwards;
 }
 
 .overlay {
@@ -92,7 +92,7 @@ h1 {
   background-color: royalblue;
   position: absolute;
   border-radius: 2px;
-  margin-left: auto;
+  margin-left: 5px;
   margin-right: 5px;
   margin-top: 5px;
   padding: 4px 4px 2px 4px;
@@ -106,9 +106,34 @@ h1 {
   animation: close 0.5s 0.5s forwards;
 }
 
+/* navigasi */
+
+.nav {
+  width: 80px;
+  height: 80px;
+  background-image: url(../img/arrow-circle-left-solid.svg);
+  position: absolute;
+  text-indent: -9999px;
+  top: 45%;
+  opacity: 0;
+}
+
+.next {
+  margin-left: 40px;
+  transform: rotate(180deg);
+}
+
+.prev {
+  margin-left: -120px;
+}
+
+.overlay:target .nav {
+  animation: fade 0.5s 0.5s forwards;
+}
+
 /* animations */
 
-@keyframes hoverFade {
+@keyframes fade {
   0% {
     opacity: 0;
   }
